@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  auth-db:
+    image: postgres:14
+    restart: always
+    volumes:
+      - content_db:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./.env
+
+volumes:
+  content_db:
